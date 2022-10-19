@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/todosFragment">
+
+    <fragment
+        android:id="@+id/todosFragment"
+        android:name="com.victor.interviewtask.data.presentation.TodosFragment"
+        android:label="TodosFragment" >
+        <action
+            android:id="@+id/action_todosFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.victor.interviewtask.data.presentation.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <action
+            android:id="@+id/action_detailsFragment_to_todosFragment"
+            app:destination="@id/todosFragment" />
+        <argument
+            android:name="user"
+            app:argType="integer" />
+    </fragment>
+</navigation>
